@@ -15,16 +15,12 @@ module.exports = {
           imageURL:
             "https://content.hwigroup.net/images/products_500x300/499291/apple-macbook-air-2018-133-space-grey-mre82na.jpg",
           description: "Apples's laptops",
-          createdAt: new Date(),
-          updatedAt: new Date(),
         },
         {
           name: "Chargers",
           imageURL:
             "https://content.hwigroup.net/images/products_500x300/499291/apple-macbook-air-2018-133-space-grey-mre82na.jpg",
           description: "Apples's Chargers",
-          createdAt: new Date(),
-          updatedAt: new Date(),
         },
       ],
       {}
