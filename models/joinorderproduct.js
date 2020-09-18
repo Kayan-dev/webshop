@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   joinorderproduct.init(
     {
       title: DataTypes.STRING,
+      orderId: DataTypes.INTEGER,
+      productId: DataTypes.INTEGER,
     },
     {
       sequelize,
