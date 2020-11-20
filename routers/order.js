@@ -1,20 +1,25 @@
 const { Router } = require("express");
 const router = new Router();
 
-const { joinorderproduct: JoinTable } = require("../models");
+const { joinordertable: JoinTable, order: Order } = require("../models");
 
-router.post("/", async (request, response) => {
+router.post("/", async (request, response, next) => {
   try {
-    const { UserId, ProductId } = request.body;
-    if (!UserId || UserId === " ") {
+    const { userId, productId } = request.body;
+    console.log("what is body", request.body);
+    if (!userId || userId === " ") {
       response.status(400).send("Must provide user id");
-    } else if (!ProductId || ProductId === " ") {
+    } else if (!productId || productId === " ") {
       response.status(400).send("Must provide products id");
     } else {
-      const table = await JoinTable.create({ orderId, productId });
-      response.json(table);
+      const orderList = await Order.create({ userId });
+      console.log("what is orderlist?", orderList);
+      // const table = await JoinTable.create({ userId, productId });
+      response.json(orderList);
     }
   } catch (e) {
     next(e);
   }
 });
+
+module.exports = router;
